@@ -1,0 +1,153 @@
+<div style="font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#2d2a32;background-color:#ffffff;max-width:1200px;margin:0px auto">
+
+  <!-- Hero -->
+  <section style="background-color:#f6f1f6;border-radius:18px;padding:48px 32px;margin-bottom:40px">
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-6">
+        <div style="display:inline-block;background-color:#5e2d5b;color:#ffffff;font-size:13px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;margin-bottom:18px">ODOO 19 ENTERPRISE</div>
+        <h1 style="font-size:40px;font-weight:800;color:#3c1f3a;line-height:1.15;margin:0px 0px 16px 0px">Spreadsheet Report Builder</h1>
+        <p style="font-size:18px;line-height:1.6;color:#4a4550;margin:0px 0px 22px 0px">Draw any printable document in an Odoo spreadsheet - borders, merged cells, colours, item tables and totals - and print it as a PDF from the record. No QWeb, no XML, no module upgrade.</p>
+        <p style="font-size:15px;color:#6b6470;margin:0px">Sales orders, invoices, delivery slips, certificates, customer cards: if you can lay it out in a grid, you can print it.</p>
+      </div>
+      <div class="col-12 col-lg-6 text-center">
+        <img src="images/sales-order-pdf.png" alt="Sales order PDF printed from a spreadsheet layout" class="img-fluid" style="max-width:100%;height:auto;border-radius:10px;border:1px solid #e2d7e1"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key points -->
+  <section style="margin-bottom:48px">
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div style="background-color:#ffffff;border:1px solid #e8e1e8;border-radius:14px;padding:22px;height:100%">
+          <div style="font-size:17px;font-weight:700;color:#5e2d5b;margin-bottom:8px">What you draw is what prints</div>
+          <div style="font-size:14px;line-height:1.6;color:#4a4550">Merged cells, borders, fill colours, bold, alignment, font size, column widths and row heights are carried into the PDF.</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div style="background-color:#ffffff;border:1px solid #e8e1e8;border-radius:14px;padding:22px;height:100%">
+          <div style="font-size:17px;font-weight:700;color:#5e2d5b;margin-bottom:8px">Real data in every cell</div>
+          <div style="font-size:14px;line-height:1.6;color:#4a4550">Type a placeholder such as [[partner_id.name]] in any cell. Each one is checked against the model before the report is saved.</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div style="background-color:#ffffff;border:1px solid #e8e1e8;border-radius:14px;padding:22px;height:100%">
+          <div style="font-size:17px;font-weight:700;color:#5e2d5b;margin-bottom:8px">Lines repeat on their own</div>
+          <div style="font-size:14px;line-height:1.6;color:#4a4550">A row that uses [[order_line.…]] is printed once per line, with [[#]] for the line number. Totals stay below it.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section style="margin-bottom:48px">
+    <h2 style="font-size:30px;font-weight:800;color:#3c1f3a;text-align:center;margin:0px 0px 8px 0px">How it works</h2>
+    <p style="font-size:16px;color:#6b6470;text-align:center;margin:0px 0px 32px 0px">From an empty sheet to a printed document in four steps.</p>
+
+    <div class="row g-4 align-items-center" style="margin-bottom:36px">
+      <div class="col-12 col-lg-5">
+        <div style="font-size:14px;font-weight:700;color:#3aa39a;margin-bottom:6px">STEP 1</div>
+        <div style="font-size:22px;font-weight:700;color:#3c1f3a;margin-bottom:10px">Create a report</div>
+        <div style="font-size:15px;line-height:1.6;color:#4a4550">Open Report Spreadsheet, add a line, give it a name and choose the model it prints for. Switch Company Header off when your sheet draws its own header. Click Edit to open its spreadsheet.</div>
+      </div>
+      <div class="col-12 col-lg-7"><img src="images/list.png" alt="Report list" class="img-fluid" style="max-width:100%;height:auto;border-radius:10px;border:1px solid #e2d7e1"/></div>
+    </div>
+
+    <div class="row g-4 align-items-center" style="margin-bottom:36px">
+      <div class="col-12 col-lg-5">
+        <div style="font-size:14px;font-weight:700;color:#3aa39a;margin-bottom:6px">STEP 2</div>
+        <div style="font-size:22px;font-weight:700;color:#3c1f3a;margin-bottom:10px">Draw the layout</div>
+        <div style="font-size:15px;line-height:1.6;color:#4a4550">Use the spreadsheet as you would use Excel: merge cells, add borders and colours, set widths. Put fixed text where it should print and placeholders where record data belongs.</div>
+      </div>
+      <div class="col-12 col-lg-7"><img src="images/layout.png" alt="Sales order layout in a spreadsheet" class="img-fluid" style="max-width:100%;height:auto;border-radius:10px;border:1px solid #e2d7e1"/></div>
+    </div>
+
+    <div class="row g-4 align-items-center" style="margin-bottom:36px">
+      <div class="col-12 col-lg-5">
+        <div style="font-size:14px;font-weight:700;color:#3aa39a;margin-bottom:6px">STEP 3</div>
+        <div style="font-size:22px;font-weight:700;color:#3c1f3a;margin-bottom:10px">File &gt; Map Data</div>
+        <div style="font-size:15px;line-height:1.6;color:#4a4550">Plain labels can also be linked to a field here: the value then prints in the empty cell to the right of the label. Press Confirm to build the report.</div>
+      </div>
+      <div class="col-12 col-lg-7"><img src="images/map-fields.png" alt="Map Fields wizard" class="img-fluid" style="max-width:100%;height:auto;border-radius:10px;border:1px solid #e2d7e1"/></div>
+    </div>
+
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-5">
+        <div style="font-size:14px;font-weight:700;color:#3aa39a;margin-bottom:6px">STEP 4</div>
+        <div style="font-size:22px;font-weight:700;color:#3c1f3a;margin-bottom:10px">Print from the record</div>
+        <div style="font-size:15px;line-height:1.6;color:#4a4550">The report appears in the Print menu of every record of that model. From now on, every change you make in the sheet updates the same report automatically.</div>
+      </div>
+      <div class="col-12 col-lg-7"><img src="images/print-menu.png" alt="Print menu on a sales order" class="img-fluid" style="max-width:100%;height:auto;border-radius:10px;border:1px solid #e2d7e1"/></div>
+    </div>
+  </section>
+
+  <!-- Live update -->
+  <section style="background-color:#3c1f3a;border-radius:18px;padding:40px 28px;margin-bottom:48px">
+    <div style="display:inline-block;background-color:#3aa39a;color:#ffffff;font-size:13px;font-weight:700;letter-spacing:1px;padding:6px 14px;border-radius:20px;margin-bottom:14px">LIVE UPDATE</div>
+    <h2 style="font-size:30px;font-weight:800;color:#ffffff;margin:0px 0px 10px 0px">Change the sheet, the PDF follows</h2>
+    <p style="font-size:16px;line-height:1.6;color:#e9dde8;margin:0px 0px 28px 0px">Once a report is built, every edit in its spreadsheet is applied to the report a moment later - a new fill colour, a border, a moved column, an extra placeholder. No Map Data, no Confirm, no upgrade: the next Print already shows it. If an edit cannot be printed, such as a misspelt field, the report keeps its last good version and you get a warning.</p>
+    <div class="row g-4">
+      <div class="col-12 col-lg-6">
+        <div style="font-size:15px;font-weight:700;color:#ffffff;margin-bottom:10px">1. Recolour the layout in the spreadsheet</div>
+        <img src="images/live-sheet.png" alt="Spreadsheet layout with a new fill colour" class="img-fluid" style="max-width:100%;height:auto;border-radius:10px"/>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div style="font-size:15px;font-weight:700;color:#ffffff;margin-bottom:10px">2. Print - the change is already there</div>
+        <img src="images/live-pdf.png" alt="Printed PDF with the same fill colour" class="img-fluid" style="max-width:100%;height:auto;border-radius:10px"/>
+      </div>
+    </div>
+    <p style="font-size:14px;color:#e9dde8;margin:20px 0px 0px 0px">Switching Company Header on or off in the report list rebuilds the report straight away too.</p>
+  </section>
+
+  <!-- Placeholders -->
+  <section style="background-color:#f3faf9;border-radius:18px;padding:36px 28px;margin-bottom:48px">
+    <h2 style="font-size:26px;font-weight:800;color:#3c1f3a;margin:0px 0px 18px 0px">Placeholders</h2>
+    <table class="table" style="width:100%;font-size:14px;background-color:#ffffff;border-radius:10px">
+      <tr style="background-color:#5e2d5b;color:#ffffff"><td style="padding:10px;font-weight:700">Type in a cell</td><td style="padding:10px;font-weight:700">Prints</td></tr>
+      <tr><td style="padding:10px;font-family:monospace">[[name]]</td><td style="padding:10px">A field of the record, e.g. S00001</td></tr>
+      <tr><td style="padding:10px;font-family:monospace">[[partner_id.state_id.code]]</td><td style="padding:10px">A field of a related record, any depth</td></tr>
+      <tr><td style="padding:10px;font-family:monospace">[[order_line.price_subtotal]]</td><td style="padding:10px">One row per line; the whole row repeats</td></tr>
+      <tr><td style="padding:10px;font-family:monospace">[[#]]</td><td style="padding:10px">Line number inside a repeated row</td></tr>
+      <tr><td style="padding:10px;font-family:monospace">[[amount_total:words]]</td><td style="padding:10px">The amount in words, in the record's currency</td></tr>
+      <tr><td style="padding:10px;font-family:monospace">[[date_order:date]]</td><td style="padding:10px">A date or date-time shown as a date</td></tr>
+      <tr><td style="padding:10px;font-family:monospace">[[company_id.logo:image]]</td><td style="padding:10px">An image field, such as the company logo</td></tr>
+    </table>
+    <p style="font-size:14px;color:#4a4550;margin:12px 0px 0px 0px">Text and placeholders can be mixed in one cell: "Phone : [[company_id.phone]]". Amounts keep their currency symbol.</p>
+  </section>
+
+  <!-- Features -->
+  <section style="margin-bottom:48px">
+    <h2 style="font-size:30px;font-weight:800;color:#3c1f3a;text-align:center;margin:0px 0px 28px 0px">Features</h2>
+    <div class="row g-3">
+      <div class="col-12 col-md-6 col-lg-4"><div style="border-left:4px solid #5e2d5b;background-color:#faf7fa;padding:18px;border-radius:8px;height:100%"><b style="color:#3c1f3a">Live update</b><br/><span style="font-size:14px;color:#4a4550">Colours, borders and layout changes reach the PDF as you edit - no Map Data again.</span></div></div>
+      <div class="col-12 col-md-6 col-lg-4"><div style="border-left:4px solid #3aa39a;background-color:#f5fbfa;padding:18px;border-radius:8px;height:100%"><b style="color:#3c1f3a">Any model</b><br/><span style="font-size:14px;color:#4a4550">Sales orders, invoices, pickings, contacts, employees - any model you can pick.</span></div></div>
+      <div class="col-12 col-md-6 col-lg-4"><div style="border-left:4px solid #5e2d5b;background-color:#faf7fa;padding:18px;border-radius:8px;height:100%"><b style="color:#3c1f3a">Merged cells</b><br/><span style="font-size:14px;color:#4a4550">Merges become table spans, so headers, logos and address blocks keep their shape.</span></div></div>
+      <div class="col-12 col-md-6 col-lg-4"><div style="border-left:4px solid #3aa39a;background-color:#f5fbfa;padding:18px;border-radius:8px;height:100%"><b style="color:#3c1f3a">Cell styling</b><br/><span style="font-size:14px;color:#4a4550">Borders, fills, bold, italic, colour, size and alignment are printed as drawn.</span></div></div>
+      <div class="col-12 col-md-6 col-lg-4"><div style="border-left:4px solid #5e2d5b;background-color:#faf7fa;padding:18px;border-radius:8px;height:100%"><b style="color:#3c1f3a">Own header or company header</b><br/><span style="font-size:14px;color:#4a4550">Use the company's standard report header, or a clean page for layouts that draw their own.</span></div></div>
+      <div class="col-12 col-md-6 col-lg-4"><div style="border-left:4px solid #3aa39a;background-color:#f5fbfa;padding:18px;border-radius:8px;height:100%"><b style="color:#3c1f3a">Checked before saving</b><br/><span style="font-size:14px;color:#4a4550">A misspelt field stops the build with a clear message instead of a broken PDF.</span></div></div>
+      <div class="col-12 col-md-6 col-lg-4"><div style="border-left:4px solid #5e2d5b;background-color:#faf7fa;padding:18px;border-radius:8px;height:100%"><b style="color:#3c1f3a">Optional AI layout</b><br/><span style="font-size:14px;color:#4a4550">For a sheet with no placeholders, a Google Gemini key in Settings lets AI shape the page.</span></div></div>
+    </div>
+  </section>
+
+  <!-- Settings -->
+  <section style="margin-bottom:48px">
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-5">
+        <div style="font-size:22px;font-weight:700;color:#3c1f3a;margin-bottom:10px">Administrators only</div>
+        <div style="font-size:15px;line-height:1.6;color:#4a4550">A report is code that runs on your data, so designing reports is limited to users with Administration rights. Everyone else simply prints the finished document. The AI key is optional and is set in Settings.</div>
+      </div>
+      <div class="col-12 col-lg-7"><img src="images/settings.png" alt="Settings" class="img-fluid" style="max-width:100%;height:auto;border-radius:10px;border:1px solid #e2d7e1"/></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#f6f1f6;border-radius:18px;padding:36px 28px">
+    <h2 style="font-size:26px;font-weight:800;color:#3c1f3a;margin:0px 0px 18px 0px">FAQ</h2>
+    <details style="background-color:#ffffff;border-radius:10px;padding:14px 18px;margin-bottom:10px"><summary style="font-weight:700;color:#3c1f3a">Which Odoo edition is needed?</summary><div style="font-size:14px;color:#4a4550;margin-top:8px">Odoo 19 Enterprise: the layout is drawn in the Enterprise spreadsheet.</div></details>
+    <details style="background-color:#ffffff;border-radius:10px;padding:14px 18px;margin-bottom:10px"><summary style="font-weight:700;color:#3c1f3a">Do I need an AI key?</summary><div style="font-size:14px;color:#4a4550;margin-top:8px">No. Layouts are printed exactly as drawn. The key is only used for sheets without placeholders.</div></details>
+    <details style="background-color:#ffffff;border-radius:10px;padding:14px 18px;margin-bottom:10px"><summary style="font-weight:700;color:#3c1f3a">Can one row show lines from two lists?</summary><div style="font-size:14px;color:#4a4550;margin-top:8px">No. A repeated row follows one list. Use one row per list, e.g. order lines and payment lines on separate rows.</div></details>
+    <details style="background-color:#ffffff;border-radius:10px;padding:14px 18px;margin-bottom:10px"><summary style="font-weight:700;color:#3c1f3a">What if I change the layout later?</summary><div style="font-size:14px;color:#4a4550;margin-top:8px">Just edit the sheet. Each change is saved to the existing report automatically; use File &gt; Map Data only to change which labels map to which fields.</div></details>
+    <details style="background-color:#ffffff;border-radius:10px;padding:14px 18px"><summary style="font-weight:700;color:#3c1f3a">Are formulas calculated?</summary><div style="font-size:14px;color:#4a4550;margin-top:8px">Not in the PDF. Use placeholders for values; the spreadsheet is the layout, not the calculation.</div></details>
+  </section>
+
+</div>

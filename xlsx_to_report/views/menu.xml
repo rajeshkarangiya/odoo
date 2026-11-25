@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_report_spreadsheet"
+        name="Report Spreadsheet"
+        web_icon="xlsx_to_report,static/description/icon.png"
+        groups="base.group_system"
+        sequence="44"/>
+
+    <menuitem
+        id="menu_report_spreadsheet_list"
+        action="xlsx_to_report.action_report_spreadsheet"
+        parent="menu_report_spreadsheet"
+        sequence="0"/>
+</odoo>

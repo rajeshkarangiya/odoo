@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+xlsx_to_report.access_report_spreadsheet,access_report_spreadsheet,xlsx_to_report.model_report_spreadsheet,base.group_system,1,1,1,1
+xlsx_to_report.access_map_fields_wizard,access_map_fields_wizard,xlsx_to_report.model_map_fields_wizard,base.group_system,1,1,1,1
+xlsx_to_report.access_map_fields_wizard_line,access_map_fields_wizard_line,xlsx_to_report.model_map_fields_wizard_line,base.group_system,1,1,1,1

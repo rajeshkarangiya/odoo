@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_map_fields_wizard_form" model="ir.ui.view">
+        <field name="name">map.fields.wizard.form</field>
+        <field name="model">map.fields.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Map Fields">
+                <group>
+                    <field name="model_id"/>
+                </group>
+
+                <field name="line_ids" editable="bottom">
+                    <list editable="bottom">
+                        <field name="label"/>
+                        <field name="field_id"/>
+                        <field name="field_type" column_invisible="True"/>
+                        <field name="field_relation" column_invisible="True"/>
+                        <field name="line_field_id"
+                               invisible="field_type not in ('one2many', 'many2many')"
+                               placeholder="Line number"/>
+                    </list>
+                </field>
+
+                <footer>
+                    <button name="action_confirm"
+                            string="Confirm"
+                            type="object"
+                            class="btn-primary"/>
+
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,87 @@
+{
+ "module": {"name": "Spreadsheet Report Builder", "technical": "xlsx_to_report", "version": "19.0.1.1.0", "odoo": "19.0"},
+ "date": "2026-11-25",
+ "purpose": "Lets an administrator design a printable PDF document in an Odoo spreadsheet - a sales order, a delivery card, a customer sheet - and print it from any record of the chosen model. Labels in the sheet are linked to fields, item lines repeat on their own, and every later change in the sheet reaches the printed PDF automatically.",
+ "where_to_find_it": "the Report Spreadsheet app in the main menu (Report Spreadsheet > Report Spreadsheet)",
+ "before_you_start": [
+  "Odoo 19 Enterprise with this module installed. You are logged in as an administrator.",
+  "The Sales app is installed and at least one confirmed sales order exists. This document uses S00001 for customer DESERT ROSE TRADING PRIVATE LIMITED: Bag of Apples, quantity 10.00, and Crate of Oranges, quantity 2.00, Total 1,890.00 (5% tax).",
+  "A second user without administrator rights who can see sales orders. This document uses Priya Sharma (login: sales)."
+ ],
+ "features": [
+  {"name": "Design in a spreadsheet", "what_it_does": "Each report owns a spreadsheet where you place titles, labels, borders and colours exactly where they should print.", "why_it_matters": "Anyone who can use Excel can lay out a document."},
+  {"name": "Map labels to fields", "what_it_does": "File > Map Data lists every label of the sheet; you choose the field each label stands for.", "why_it_matters": "No technical knowledge is needed to fill the document with real data."},
+  {"name": "Item lines repeat", "what_it_does": "A column header mapped to Order Lines prints once per line of the order, with the line number for Sr.", "why_it_matters": "Orders with two or twenty lines print correctly from the same layout."},
+  {"name": "Live update", "what_it_does": "After the first Map Data, every change in the sheet is applied to the report a moment later.", "why_it_matters": "Colour, wording and layout changes need no extra step."},
+  {"name": "Company header on or off", "what_it_does": "The Company Header switch prints the company's standard header around the layout, or a clean page.", "why_it_matters": "Use your own header drawn in the sheet, or the standard one."},
+  {"name": "Administrators only", "what_it_does": "Only administrators see the app and can change reports; everyone can print them.", "why_it_matters": "A report runs on company data, so designing it stays with administrators."}
+ ],
+ "scenarios": [
+  {"title": "Test case 1 - Create a report",
+   "steps": [
+    {"do": "Open Report Spreadsheet from the main menu. The list of existing reports appears.", "screenshot": "docs/story/tc01-s01.png"},
+    {"do": "Click New. Type Name: Delivery Card. In Model choose Sales Order.", "screenshot": "docs/story/tc01-s02.png"},
+    {"do": "Click Save.", "screenshot": "docs/story/tc01-s03.png"}
+   ],
+   "result": "A line Delivery Card appears with Spreadsheet: Delivery Card, Model: Sales Order and Company Header switched on."},
+  {"title": "Test case 2 - Draw the layout",
+   "steps": [
+    {"do": "On the Delivery Card line click Edit. An empty spreadsheet opens.", "screenshot": "docs/story/tc02-s01.png"},
+    {"do": "Type: A1 DELIVERY CARD, A3 Order, A4 Customer, A6 Sr., B6 Product, C6 Qty, B8 Total. The sheet saves by itself (Saved at the top).", "screenshot": "docs/story/tc02-s02.png"}
+   ],
+   "result": "The sheet shows the seven texts in those cells and the top bar reads Saved."},
+  {"title": "Test case 3 - Map the labels to sales order fields",
+   "steps": [
+    {"do": "Open the File menu of the spreadsheet. Map Data is listed.", "screenshot": "docs/story/tc03-s01.png"},
+    {"do": "Click Map Data. The Map Fields window lists every label of the sheet, with Model: Sales Order.", "screenshot": "docs/story/tc03-s02.png"},
+    {"do": "Set Odoo Field: Order -> Order Reference; Customer -> Customer; Sr. -> Order Lines (Line Field empty); Product -> Order Lines, Line Field Product; Qty -> Order Lines, Line Field Quantity; Total -> Total. Leave DELIVERY CARD empty.", "screenshot": "docs/story/tc03-s03.png"},
+    {"do": "Click Confirm.", "screenshot": "docs/story/tc03-s04.png"}
+   ],
+   "result": "A green message says: Report ready. Open any Sales Order record and use Print > Delivery Card."},
+  {"title": "Test case 4 - Print the report from a sales order",
+   "steps": [
+    {"do": "Open Sales > Orders > S00001. Click the gear (Actions) and point at Print. Delivery Card is listed beside Quotation / Order.", "screenshot": "docs/story/tc04-s01.png"},
+    {"do": "Click Delivery Card and open the PDF.", "screenshot": "docs/story/tc04-s02.png"}
+   ],
+   "result": "The PDF shows the company header, DELIVERY CARD, Order S00001, Customer DESERT ROSE TRADING PRIVATE LIMITED, then two numbered lines: 1 [0808] Bag of Apples 10.00 and 2 [0805] Crate of Oranges 2.00, and Total 1,890.00. Each value prints in the cell right of, or below, its label."},
+  {"title": "Test case 5 - Change the layout, the PDF follows",
+   "steps": [
+    {"do": "Open the Delivery Card spreadsheet again. Change A1 to DELIVERY NOTE and make it bold (Ctrl+B). In D3 type Date and in E3 type [[date_order:date]]. Do not open Map Data.", "screenshot": "docs/story/tc05-s01.png"},
+    {"do": "Wait two seconds, then print Delivery Card from S00001 again.", "screenshot": "docs/story/tc05-s02.png"}
+   ],
+   "result": "The new PDF shows the bold title DELIVERY NOTE and Date 11/25/2026 on the Order line. Nothing else had to be clicked."},
+  {"title": "Test case 6 - A mistake in the sheet is refused",
+   "steps": [
+    {"do": "In the spreadsheet type [[partner_nme]] in D4 (a misspelt field name).", "screenshot": "docs/story/tc06-s01.png"},
+    {"do": "Delete D4 again and print Delivery Card from S00001.", "screenshot": "docs/story/tc06-s02.png"}
+   ],
+   "result": "A yellow warning appears: Report not updated - Unknown field 'partner_nme' in placeholder [[partner_nme]] on Sales Order. The report is not broken: after D4 is cleared, the PDF prints as in test case 5. The warning is the correct outcome of this test, not a failure."},
+  {"title": "Test case 7 - Print without the company header",
+   "steps": [
+    {"do": "Open Report Spreadsheet. On the Delivery Card line switch Company Header off.", "screenshot": "docs/story/tc07-s01.png"},
+    {"do": "Print Delivery Card from S00001.", "screenshot": "docs/story/tc07-s02.png"}
+   ],
+   "result": "The PDF starts directly with DELIVERY NOTE: no company logo, address or footer. All figures are the same as in test case 5."},
+  {"title": "Test case 8 - A user without administrator rights",
+   "steps": [
+    {"do": "Log in as Priya Sharma (login sales). The home screen has no Report Spreadsheet app.", "screenshot": "docs/story/tc08-s01.png"},
+    {"do": "Open Sales > Orders > S00001, click the gear and point at Print. Delivery Card is listed.", "screenshot": "docs/story/tc08-s02.png"},
+    {"do": "Type the Report Spreadsheet address into the browser directly.", "screenshot": "docs/story/tc08-s03.png"}
+   ],
+   "result": "Priya can print Delivery Card but cannot open or change reports: opening the list directly shows Access Error - only Role / Administrator may use it. This refusal is the correct outcome."}
+ ],
+ "known_limits": [
+  "Sample values typed under a column header (for example Item 01, Item 02) print as fixed text. Delete sample rows so only the repeated line remains.",
+  "Spreadsheet formulas are not calculated in the PDF. Use a field (for example Total) instead of =SUM().",
+  "A brand-new report needs File > Map Data once. Live update starts after that first Confirm.",
+  "Dates print in the language format of the user who prints (11/25/2026 for English US).",
+  "HSN/SAC and other Indian tax fields need the Indian localisation; without it use the product's Internal Reference."
+ ],
+ "glossary": [
+  {"term": "Report", "means": "A printable PDF document listed under Print on a record."},
+  {"term": "Label", "means": "A text you typed in a cell, such as Customer or Qty."},
+  {"term": "Map", "means": "Tell the module which field a label stands for."},
+  {"term": "Line Field", "means": "For a list such as Order Lines: which value of each line prints under the header."},
+  {"term": "Placeholder", "means": "A field name between double square brackets, such as [[date_order:date]], typed directly into a cell."}
+ ]
+}
